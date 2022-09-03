@@ -1,0 +1,24 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/vercel": "^1.0.1",
+    "@unocss/preset-uno": "^0.45.14",
+    "astro": "^1.1.1"
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.45.13",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.3",
+    "unocss": "^0.45.13",
+    "vite": "^3.0.9"
+  }
+}

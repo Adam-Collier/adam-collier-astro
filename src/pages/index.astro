@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const getBooks = async () => {
+  const response = await fetch(`${import.meta.env.STATIC_API}/oku_feed.json`)
+  const json = await response.json()
+  return json
+}
+
+const getFilms = async () => {
+  const response = await fetch(`${import.meta.env.STATIC_API}/letterboxd.json`)
+  const json = await response.json()
+  return json
+}
+
+const getTopTracks = async () => {
+  const response = await fetch(`${import.meta.env.STATIC_API}/top_tracks.json`)
+  const json = await response.json()
+  return json
+}
+const [books, latestFilms, topTracks] = await Promise.all([
+  getBooks(),
+  getFilms(),
+  getTopTracks(),
+])
+
+const { read, reading } = books
+---
+
+<Layout title="Home">
+  <main class="space-y-20 children:p-4">
+    <section class="w-full bg-gradient-to-t from-zinc-100 to-gray-50">
+      <div class="space-y-4 rounded-xl max-w-7xl mx-auto py-4 sm:py-12 sm:px-8">
+        <div class="h-[24px] flex justify-between items-center">
+          <!-- <SpotifyLogo class="h-full w-auto" /> -->
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 sm:pt-4"
+        >
+          {
+            topTracks.map(
+              ({
+                artist,
+                url,
+                title,
+                image,
+              }: {
+                artist: string
+                url: string
+                title: string
+                image: string
+              }) => (
+                <a
+                  class="block w-full flex items-start"
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <div class="block w-full relative rounded overflow-hidden shadow-lg basis-16 sm:basis-20 shrink-0">
+                    <div class="block w-full pt-full" />
+                    <img
+                      class="rounded absolute top-0 left-0 bottom-0 right-0 bg-gray-100/20 text-xs text-gray-400"
+                      src={image}
+                      alt={`${title}, ${artist}`}
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div class="p-1 sm:p-2 space-y-0.5">
+                    <h3 class="text-sm sm:text-base leading-4 sm:leading-5 text-clamp-2">
+                      {title}
+                    </h3>
+                    <p class="text-xs leading-4 text-clamp-1">{artist}</p>
+                  </div>
+                </a>
+              ),
+            )
+          }
+        </div>
+      </div>
+    </section>
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 sm:gap-16">
+      <section class="flex flex-col gap-4 sm:basis-2/5">
+        <p>
+          Looking for a new book to read? Check out what I'm reading and the
+          last few I've finished. All pulled from my{' '}
+          <a
+            class="underline text-indigo-600"
+            href="https://oku.club/user/mistapolnareff"
+            target="_blank"
+          >
+            Oku.club
+          </a>{' '}
+          feed.
+        </p>
+        <p
+          class="block bg-amber-50 text-amber-700 self-start px-2 py-1 text-sm flex gap-1 items-center"
+        >
+          <span class="i-ri:bookmark-line"></span>
+          Currently Reading...
+        </p>
+        <section class="flex flex-col gap-4">
+          <a href={reading.link} class="group">
+            <h2 class="group-hover:underline">
+              {reading.title}
+            </h2>
+            <p class="text-slate-500 text-sm">
+              {reading.creator}
+            </p>
+          </a>
+          <p
+            class="block bg-lime-50 text-lime-800 self-start px-2 py-1 text-sm flex gap-1 items-center"
+          >
+            <span class="i-ri:check-double-line"></span>
+            Last few I've finished
+          </p>
+          {
+            read.map(
+              (book: { link: string; title: string; creator: string }) => (
+                <a href={book.link} class="group">
+                  <h2 class="group-hover:underline">{book.title}</h2>
+                  <p class="text-slate-500 text-sm">{book.creator}</p>
+                </a>
+              ),
+            )
+          }
+        </section>
+      </section>
+
+      <section class="flex flex-col gap-4 sm:basis-3/5">
+        <p>
+          Struggling for a film to watch? Here's the latest eight from my{' '}
+          <a
+            class="underline text-indigo-600"
+            href="https://letterboxd.com/mistapolnareff/"
+          >
+            Letterboxd
+          </a>
+        </p>
+        <div class="grid grid-cols-4 gap-2">
+          {
+            latestFilms.map(
+              ({
+                link,
+                src,
+                title,
+              }: {
+                link: string
+                src: string
+                title: string
+              }) => {
+                return (
+                  <a
+                    href={link}
+                    class="block overflow-hidden rounded relative w-full"
+                    aria-label={`${title} film`}
+                  >
+                    <div class="block pt-[150%]" />
+                    <img
+                      src={src}
+                      alt={title}
+                      class="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                  </a>
+                )
+              },
+            )
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
