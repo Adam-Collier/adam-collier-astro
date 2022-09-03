@@ -1,0 +1,16 @@
+---
+// Also, you can import multiple files with Astro.glob
+const posts = await Astro.glob('../blog/*.md')
+---
+
+<ul>
+  {
+    posts.map(({ frontmatter, url }) => {
+      return (
+        <li>
+          <a href={url}>{frontmatter.title}</a>
+        </li>
+      )
+    })
+  }
+</ul>
