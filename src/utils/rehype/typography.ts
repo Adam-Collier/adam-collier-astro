@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit'
 
 export function typography() {
   // All remark and rehype plugins return a separate function
-  return function (tree) {
+  return function (tree: any) {
     visit(tree, (node) => {
       if (node.tagName === 'h2') {
         node.properties.className = 'text-2xl'
