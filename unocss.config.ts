@@ -1,6 +1,7 @@
-import { defineConfig, presetIcons, presetUno } from 'unocss'
+import { presetUno } from 'unocss'
+import presetIcons from '@unocss/preset-icons'
 
-export default defineConfig({
+export default {
   shortcuts: [
     {
       btn: 'text-sm py-2 px-4 rounded bg-neutral-900 hover:bg-neutral-700 border border-transparent text-white disabled:bg-gray-300 disabled:hover:bg-gray-300 disabled:cursor-not-allowed',
@@ -44,4 +45,4 @@ export default defineConfig({
     },
   },
   presets: [presetUno(), presetIcons()],
-})
+}

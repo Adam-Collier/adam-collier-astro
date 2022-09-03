@@ -1,6 +1,6 @@
 import { visit } from 'unist-util-visit'
 
-export function typography() {
+export const typography = () => {
   // All remark and rehype plugins return a separate function
   return function (tree: any) {
     visit(tree, (node) => {
@@ -22,10 +22,10 @@ export function typography() {
       if (node.tagName === 'ul') {
         node.properties.className = 'list-disc pl-8 space-y-2'
       }
-      if (node.tagName === 'code') {
-        node.properties.className =
-          'bg-gray-100 dark:bg-gray-700 text-sm px-1.5 py-1 rounded'
-      }
+      //   if (node.tagName === 'code') {
+      //     node.properties.className =
+      //       'bg-gray-100 dark:bg-gray-700 text-sm px-1.5 py-1 rounded'
+      //   }
       if (node.tagName === 'a') {
         node.properties.className =
           'underline text-indigo-600 dark:text-indigo-400'

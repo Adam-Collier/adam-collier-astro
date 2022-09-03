@@ -4,6 +4,7 @@ import vercelAdapter from '@astrojs/vercel/serverless' // @ts-ignore: this will 
 import preact from '@astrojs/preact'
 
 import { typography } from './src/utils/rehype/typography'
+import { highlight } from './src/utils/rehype/highlight'
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
   adapter: vercelAdapter(),
   integrations: [preact()],
   markdown: {
-    rehypePlugins: [typography],
+    syntaxHighlight: false,
+    rehypePlugins: [typography, highlight],
   },
 })
