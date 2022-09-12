@@ -1,0 +1,17 @@
+---
+const response = await fetch(
+  import.meta.env.STATIC_API + '/resources/' + Astro.params.id + '.json',
+)
+
+if (response.status !== 200) {
+  return new Response('Not Found', {
+    status: 404,
+  })
+}
+
+const json = await response.json()
+
+const resource = json.data
+---
+
+<pre>{JSON.stringify(resource)}</pre>

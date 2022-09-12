@@ -1,0 +1,16 @@
+---
+const response = await fetch(import.meta.env.STATIC_API + '/resources.json')
+const json = await response.json()
+
+const resources = json.data
+
+type ResourceProps = {
+  name: string
+}
+---
+
+{
+  resources.map(({ name }: ResourceProps) => (
+    <a href={`/resources/${name}`}>{name}</a>
+  ))
+}
