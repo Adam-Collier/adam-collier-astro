@@ -40,6 +40,9 @@ export default {
     },
   ],
   theme: {
+    colors: {
+      cream: '#ebe6db',
+    },
     listStyleType: {
       revert: 'revert',
     },

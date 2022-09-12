@@ -2,6 +2,10 @@ import { visit } from 'unist-util-visit'
 import { toString } from 'hast-util-to-string'
 import { refractor } from 'refractor'
 
+import jsx from 'refractor/lang/jsx'
+
+refractor.register(jsx)
+
 export const highlight = () => {
   return (tree: any) => {
     visit(tree, 'element', visitor)
@@ -9,7 +13,7 @@ export const highlight = () => {
 
   function visitor(node: any, index: any, parentNode: any) {
     if (node.tagName === 'pre') {
-      node.properties.className = 'pre'
+      node.properties.className = 'pre my-8'
       let code = toString(node.children[0])
 
       const wrapperNode = {
@@ -48,7 +52,6 @@ export const highlight = () => {
 
     if (parentNode.tagName === 'pre' && node.tagName === 'code') {
       // syntax highlight
-      console.log(node.properties)
       const lang = node.properties.className
         ? node.properties.className[0].split('-')[1]
         : 'md'

@@ -1,0 +1,29 @@
+---
+// Also, you can import multiple files with Astro.glob
+const posts = await Astro.glob('./blog/*.md')
+
+const convertDateString = (dateStr: string) => {
+  var dateParts = dateStr.split('/')
+  // month is 0-based, that's why we need dataParts[1] - 1
+  return new Date(+dateParts[2], +dateParts[1] - 1, +dateParts[0])
+}
+
+const orderedPosts = posts.sort((a, b) => {
+  return (
+    convertDateString(b.frontmatter.published).getTime() -
+    convertDateString(a.frontmatter.published).getTime()
+  )
+})
+---
+
+<ul>
+  {
+    orderedPosts.map(({ frontmatter, url }) => {
+      return (
+        <li>
+          <a href={url}>{frontmatter.title}</a>
+        </li>
+      )
+    })
+  }
+</ul>

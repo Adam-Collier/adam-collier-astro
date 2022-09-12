@@ -13,6 +13,6 @@ export default defineConfig({
   integrations: [preact()],
   markdown: {
     syntaxHighlight: false,
-    rehypePlugins: [typography, highlight],
+    rehypePlugins: [highlight, typography],
   },
 })

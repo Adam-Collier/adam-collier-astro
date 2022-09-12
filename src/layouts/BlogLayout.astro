@@ -5,6 +5,12 @@ const { frontmatter } = Astro.props
 import '@unocss/reset/tailwind.css'
 import '../styles/uno.css'
 import '../styles/refractor.css'
+
+declare global {
+  interface Window {
+    copyCodeToClipboard: (el: HTMLButtonElement) => Promise<void>
+  }
+}
 ---
 
 <html>
@@ -12,13 +18,71 @@ import '../styles/refractor.css'
     <!-- Add other Head elements here, like styles and meta tags. -->
     <title>{frontmatter.title}</title>
   </head>
-  <body>
-    <main class="max-w-2xl mx-auto space-y-3 py-8 px-4">
+  <body class="">
+    <div
+      class="fixed inset-0 bg-[url(/backgrounds/noise.png)] pointer-events-none z-50 bg-cover"
+    >
+    </div>
+    <main class="max-w-2xl mx-auto space-y-5 py-14 px-4">
       <!-- Add other UI components here, like common headers and footers. -->
-      <h1 class="text-2xl">{frontmatter.title}</h1>
+      <h1 class="text-4xl mb-6 font-medium tracking-[-0.021em]">
+        {frontmatter.title}
+      </h1>
       <!-- 2. Rendered HTML will be passed into the default slot. -->
       <slot />
       <p>Written on: {frontmatter.date}</p>
     </main>
   </body>
 </html>
+
+<style>
+  @font-face {
+    font-family: 'Benton';
+    src: url('/fonts/Benton-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url('/fonts/Inter.var.woff2') format('woff2');
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da,
+      U+02dc, U+2000-206f, U+2074, U+20ac, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+feff, U+fffd;
+  }
+
+  body {
+    font-family: 'Inter';
+  }
+</style>
+
+<script>
+  const copyToClipboard = (content: string) => {
+    if (typeof window !== 'undefined') {
+      const el = document.createElement(`textarea`)
+      el.value = content
+      el.setAttribute(`readonly`, ``)
+      el.style.position = `absolute`
+      el.style.left = `-9999px`
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand(`copy`)
+      document.body.removeChild(el)
+    }
+  }
+
+  window.copyCodeToClipboard = async (el: HTMLButtonElement) => {
+    el.children[0].classList.remove('i-ri:clipboard-line')
+    el.children[0].classList.add('i-ri:check-line')
+    if (el.dataset.code) {
+      copyToClipboard(el.dataset.code!)
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    el.children[0].classList.remove('i-ri:check-line')
+    el.children[0].classList.add('i-ri:clipboard-line')
+  }
+</script>

@@ -11,8 +11,9 @@
 
     --text: var(--white);
     /* use a linear gradient hack for consistency between dark and light pages */
-    --background: linear-gradient(rgb(255 135 31 / 5%), rgb(255 135 31 / 5%)),
-        linear-gradient(rgb(24, 24, 27, 1), rgb(24, 24, 27, 1));
+    /* --background: linear-gradient(rgb(255 135 31 / 5%), rgb(255 135 31 / 5%)),
+        linear-gradient(rgb(24, 24, 27, 1), rgb(24, 24, 27, 1)); */
+    --background: rgba(0,0,0,0.85);
     --syntax1: var(--orange);
     --syntax2: var(--turq);
     --syntax3: var(--pink);
@@ -31,7 +32,7 @@ pre {
     line-height: 1.5;
     white-space: pre;
     border-radius: 0.25rem;
-    padding: 1rem;
+    padding: 2rem;
     color: #fff;
 }
 
