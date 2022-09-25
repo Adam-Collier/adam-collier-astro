@@ -1,4 +1,6 @@
 ---
+import Layout from '@layouts/Layout.astro'
+
 const response = await fetch(import.meta.env.STATIC_API + '/resources.json')
 const json = await response.json()
 
@@ -9,8 +11,10 @@ type ResourceProps = {
 }
 ---
 
-{
-  resources.map(({ name }: ResourceProps) => (
-    <a href={`/resources/${name}`}>{name}</a>
-  ))
-}
+<Layout title="resources">
+  {
+    resources.map(({ name }: ResourceProps) => (
+      <a href={`/resources/${name}`}>{name}</a>
+    ))
+  }
+</Layout>

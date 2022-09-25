@@ -1,4 +1,6 @@
 ---
+import Layout from '@layouts/Layout.astro'
+
 // Also, you can import multiple files with Astro.glob
 const posts = await Astro.glob('./blog/*.md')
 
@@ -16,14 +18,16 @@ const orderedPosts = posts.sort((a, b) => {
 })
 ---
 
-<ul>
-  {
-    orderedPosts.map(({ frontmatter, url }) => {
-      return (
-        <li>
-          <a href={url}>{frontmatter.title}</a>
-        </li>
-      )
-    })
-  }
-</ul>
+<Layout title="blog">
+  <ul>
+    {
+      orderedPosts.map(({ frontmatter, url }) => {
+        return (
+          <li>
+            <a href={url}>{frontmatter.title}</a>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Layout>
