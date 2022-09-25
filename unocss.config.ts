@@ -19,7 +19,7 @@ export default {
       }),
     ],
     [
-      /^text-clamp-(\d)$/,
+      /^text-clamp-(\d\d)$/,
       ([, d]: any) => ({
         display: '-webkit-box;',
         '-webkit-line-clamp': d,
@@ -30,12 +30,12 @@ export default {
   ],
   variants: [
     // href: hover:
-    (matcher) => {
+    (matcher: any) => {
       if (!matcher.startsWith('href:')) return matcher
       return {
         // slice `hover:` prefix and passed to the next variants and rules
         matcher: matcher.slice(5),
-        selector: (s) => `${s} a`,
+        selector: (s: string) => `${s} a`,
       }
     },
   ],
@@ -45,6 +45,15 @@ export default {
     },
     listStyleType: {
       revert: 'revert',
+    },
+    boxShadow: {
+      inner: 'inset 0px 0px 0px 1px rgba(255, 255, 255, 0.05)',
+      letterboxd:
+        '0px 0px 2.2px var(--un-shadow-color),0px 0px 5.3px var(--un-shadow-color),0px 0px 10px var(--un-shadow-color),0px 0px 17.9px var(--un-shadow-color),0px 0px 33.4px var(--un-shadow-color),0px 0px 80px var(--un-shadow-color)',
+    },
+    transitionProperty: {
+      bounce:
+        'transform 0.4s cubic-bezier(.26,.5,0,1.14), opacity 0.4s cubic-bezier(.26,.5,0,1.14)',
     },
   },
   presets: [presetUno(), presetIcons()],
