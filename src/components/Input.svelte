@@ -4,7 +4,7 @@
 </script>
 
 <input
-  class="outline-none grow-1 bg-transparent pt-1"
+  class="outline-none grow-1 bg-transparent sm:pt-1"
   type="text"
   {placeholder}
   bind:value={$searchValue}
