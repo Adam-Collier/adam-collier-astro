@@ -1,0 +1,634 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "createdAt": "2022-01-19T14:59:26.711Z",
+      "updatedAt": "2022-01-19T14:59:26.711Z",
+      "title": "Line Clamp",
+      "content": "An essential snippet of code to have in your arsenal. No more CSS hacks or over engineered JavaScript solutions needed.\n\n```css\n.line-clamp {\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 2,
+      "createdAt": "2022-01-19T15:01:30.092Z",
+      "updatedAt": "2022-01-19T15:01:30.092Z",
+      "title": "Multiple background images",
+      "content": "Remember that the icon/image is declared after the colour. A good use case for this is image placeholders, for example you could have your company's logo above their brand grey.\n\n```css\n.image-placeholder {\n  background: #eff0f2 url('./icons/logo.svg');\n}\n\n/* alternatively we can define colour and image seperately for the same effect */\n.image-placeholder {\n  background-color: #eff0f2;\n  background-image: url('./icons/logo.svg');\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 3,
+      "createdAt": "2022-01-19T19:08:07.967Z",
+      "updatedAt": "2022-01-19T19:08:07.968Z",
+      "title": "Using revert instead of underline",
+      "content": "Say we have created a link with `text-decoration: none` and we want the underline to show on hover, instead of explicitly saying `text-decoration: underline` we can use `revert` so it falls back to the original \"state\".\n\n```css\na {\n  text-decoration: none;\n\n  &:hover {\n    text-decoration: revert;\n  }\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 4,
+      "createdAt": "2022-01-19T19:10:20.050Z",
+      "updatedAt": "2022-01-19T19:10:20.050Z",
+      "title": "Add something to .gitignore",
+      "content": "Refreshes the tracking of your files. Super useful for adding new things to your .gitignore file.\n\n```bash\n# you can either removed all the cached files\ngit rm -r --cached .\n\n# or you can removed the file/folder individually\ngit rm -r --cached generated-styles.css\n```",
+      "SnippetCollection": {
+        "id": 2,
+        "createdAt": "2022-01-19T19:08:40.676Z",
+        "updatedAt": "2022-01-19T19:08:40.676Z",
+        "name": "Git",
+        "description": ""
+      }
+    },
+    {
+      "id": 5,
+      "createdAt": "2022-01-19T19:12:11.704Z",
+      "updatedAt": "2022-01-19T19:12:11.704Z",
+      "title": "Git stash",
+      "content": "An underrated command in my opinion. Need to quickly switch branch but don't want to commit your changes on the current branch just yet? Git stash is perfect for this.\n\n```bash\n# for when it's too hard to think of a message\ngit stash\n\n# to make it clearer what each stash is\ngit stash save \"optional message for yourself\"\n\n# apply the latest stash (I tend to use this the most)\ngit stash apply stash@{0}\n\n# view a list of your stashes\ngit stash list\n```",
+      "SnippetCollection": {
+        "id": 2,
+        "createdAt": "2022-01-19T19:08:40.676Z",
+        "updatedAt": "2022-01-19T19:08:40.676Z",
+        "name": "Git",
+        "description": ""
+      }
+    },
+    {
+      "id": 6,
+      "createdAt": "2022-01-19T19:13:47.571Z",
+      "updatedAt": "2022-01-19T19:13:47.571Z",
+      "title": "Details element for HTML accordion",
+      "content": "An HTML first \"accordion\". Forget about using JavaScript and make it simple for yourself by utilising semantic HTML. You can also style the default arrow by targeting the `:marker` pseudo element.\n\n```html\n<details>\n  <summary>What?</summary>\n  Stay Home Stay Safe!\n</details>\n```",
+      "SnippetCollection": {
+        "id": 3,
+        "createdAt": "2022-01-19T19:13:01.342Z",
+        "updatedAt": "2022-01-19T19:13:01.342Z",
+        "name": "HTML",
+        "description": ""
+      }
+    },
+    {
+      "id": 7,
+      "createdAt": "2022-01-19T19:17:24.265Z",
+      "updatedAt": "2022-01-19T19:17:24.265Z",
+      "title": "Open link in a new Tab",
+      "content": "I don't think this is as much of a big deal now but at one point there was a real security concern over using `target=\"_blank\"` and leaving yourself vulnerable to attacks.\n\n```html\n<a\n  href=\"<https://twitter.com/CollierAdam>\"\n  target=\"_blank\"\n  rel=\"noopener noreferrer\"\n>\n  DM me on Twitter.\n</a>\n```\n\n",
+      "SnippetCollection": {
+        "id": 3,
+        "createdAt": "2022-01-19T19:13:01.342Z",
+        "updatedAt": "2022-01-19T19:13:01.342Z",
+        "name": "HTML",
+        "description": ""
+      }
+    },
+    {
+      "id": 8,
+      "createdAt": "2022-01-27T22:37:16.882Z",
+      "updatedAt": "2022-03-17T09:48:53.143Z",
+      "title": "toSlug",
+      "content": "Creating this site I used this snippet so much that it became a util function. Super simple and an absolute godsend when it came to working with Remix.\n\n```js\nexport const toSlug = (title: string) =>\n  title\n    .toLowerCase()\n    // remove any spaces from the beginning and end of the string\n    .trim()\n    // replace any spaces with a dash\n    .replace(/ /g, '-')\n    // replace any characters that aren't numbers letters dashes or slashes\n    .replace(/[^a-z0-9-\\/]/g, '')\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 9,
+      "createdAt": "2022-01-27T22:39:33.328Z",
+      "updatedAt": "2022-03-18T12:08:43.400Z",
+      "title": "toReadableDate",
+      "content": "I hate having to think about converting dates into a human readable formate so I created a quick util function.\n\n```js\nexport const toReadableDate = (date: Date) => {\n  const dateOptions: Intl.DateTimeFormatOptions = {\n    year: 'numeric',\n    month: 'long',\n    day: 'numeric',\n  }\n\n  return new Date(date).toLocaleDateString('en-US', dateOptions)\n}\n```\nIn the future something like this will become even easier using JavaScript's proposed [Temporal API](https://tc39.es/proposal-temporal/docs/)",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 10,
+      "createdAt": "2022-02-06T11:54:13.513Z",
+      "updatedAt": "2022-02-06T11:54:13.514Z",
+      "title": "Responsive CSS grid",
+      "content": "Taken from the infamous CSS Tricks post [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/). This serves as a good starting point for setting up your responsive grid.\n\n```css\n.grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  /* This is better for small screens, once min() is better supported */\n  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */\n  grid-gap: 1rem;\n  /* This is the standardized property now, but has slightly less support */\n  /* gap: 1rem */\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 11,
+      "createdAt": "2022-02-06T11:55:46.812Z",
+      "updatedAt": "2022-02-06T11:55:46.812Z",
+      "title": "Background shorthand",
+      "content": "Sometimes it can be a pain remembering the order of each background property (it gets me every time).\n\n```css\n/* image, position, size and repeat */\nbody {\n  background: url(sweettexture.jpg) top center / 200px 200px no-repeat;\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 12,
+      "createdAt": "2022-02-06T11:56:24.917Z",
+      "updatedAt": "2022-02-06T11:56:24.918Z",
+      "title": "Using revert instead of underline",
+      "content": "Say we have created a link with `text-decoration: none` and we want the underline to show on hover, instead of explicitly saying `text-decoration: underline` we can use `revert` so it falls back to the original \"state\".\n\n```css\na {\n  text-decoration: none;\n\n  &:hover {\n    text-decoration: revert;\n  }\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 13,
+      "createdAt": "2022-02-06T12:04:52.366Z",
+      "updatedAt": "2022-02-06T12:04:52.367Z",
+      "title": "The Stack layout",
+      "content": "Utilising the \"Lobotomised Owls\" selector we can create more consistent spacing between elements on our pages. Essentially we are telling the browser to only apply margin top to those elements which have a previous sibling.\n\n```css\n.stack {\n  --space: 1.5rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.stack > * {\n  margin-top: 0;\n  margin-bottom: 0;\n}\n\n.stack > * + * {\n  margin-top: var(--space);\n}\n```\n\nreferences:\n- For context about the code: [Every Layout - The Stack](https://every-layout.dev/layouts/stack/)\n- To learn about the origins: [Axiomatic CSS and Lobotomized Owls](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/)",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 14,
+      "createdAt": "2022-02-06T12:05:42.114Z",
+      "updatedAt": "2022-02-06T12:05:42.115Z",
+      "title": "Animation Fill Mode both",
+      "content": "I've always used forwards in the past because I never thought to explore the other options. As it turns out there is a `both` option, which means no more adding default styles before the keyframes animation!\n\n```css\n.box {\n  animation: slide-in 1000ms ease-out both;\n  animation-delay: 500ms;\n}\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 15,
+      "createdAt": "2022-02-06T12:06:58.922Z",
+      "updatedAt": "2022-02-06T12:16:04.047Z",
+      "title": "Delete local branches",
+      "content": "When you have merged and deleted a branch on GitHub this command will delete the local branches that don't exist remotely.\n\n```bash\ngit branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d\n```",
+      "SnippetCollection": {
+        "id": 1,
+        "createdAt": "2022-01-19T14:58:41.486Z",
+        "updatedAt": "2022-01-19T14:58:41.489Z",
+        "name": "CSS",
+        "description": ""
+      }
+    },
+    {
+      "id": 16,
+      "createdAt": "2022-02-06T12:19:23.202Z",
+      "updatedAt": "2022-02-06T12:19:23.202Z",
+      "title": "Chunk an array",
+      "content": "Because sometime you just need to chunk some stuff.\n\n```jsx\nconst chunk = (arr, size) =>\n  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>\n    arr.slice(i * size, i * size + size)\n  );\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 17,
+      "createdAt": "2022-02-06T12:22:40.225Z",
+      "updatedAt": "2022-02-06T12:22:40.226Z",
+      "title": "Flatten an array",
+      "content": "Introduced in ES6 we can now easily flatten multi dimensional arrays. Gone are the days of having to create our own solution (taken from stackoverflow).\n\n```jsx\n// This method accepts one argument to choose the depth of the flattening\nconst multiDimensionalArray = [\n  [1, 2],\n  [3, 4],\n  [5, 6],\n];\n\nconst flattenedArray = multiDimensionalArray.flat(); // [1, 2, 3, 4, 5, 6]\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 18,
+      "createdAt": "2022-02-06T12:23:55.653Z",
+      "updatedAt": "2022-02-06T12:23:55.654Z",
+      "title": "Remove a property from an Object",
+      "content": "A pretty neat solution, by leveraging ES6 Object destructuring assignment we can immutably remove properties.\n\n```js\nconst item = {\n  id: 1,\n  price: 50,\n  image: 'item.jpeg',\n};\n\nconst { id, ...item2 } = item;\n// now item 2 doesnt have an id property\nconsole.log(item2);\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 19,
+      "createdAt": "2022-02-06T12:25:34.601Z",
+      "updatedAt": "2022-02-06T12:28:19.990Z",
+      "title": "Optional Chaining",
+      "content": "More than anything it's going to save you some heaps of typing, it's a neat solution for something that has plagued developers sanity for a while now. If the expression short circuits (the values doesn't exist) then undefined will be returned.\n```js\n// Instead of something like\nconst city = user && user.address && user.address.city;\n// We can do\nconst city = user?.address?.city;\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 20,
+      "createdAt": "2022-02-06T12:30:34.478Z",
+      "updatedAt": "2022-02-06T12:30:34.479Z",
+      "title": "Get a single value from an array of objects via id",
+      "content": "Simple, elegant and it will save you a bunch of time. No more mapping or filtering involved.\n\n```js\nmyArray.find((x) => x.id === '45').author;\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 21,
+      "createdAt": "2022-02-06T12:31:47.603Z",
+      "updatedAt": "2022-02-06T12:31:47.604Z",
+      "title": "Decode HTML entities",
+      "content": "Sometimes when using API's or text from the document special characters are encoded into HTML entities. We can take advantage of the `textarea` tag to decode these strings for us!\n\n```js\nexport const decodeHtmlEntities = (html) => {\n  var textArea = document.createElement('textarea');\n  textArea.innerHTML = html;\n  let decodedHTML = textArea.value;\n  textArea.remove();\n  return decodedHTML;\n};\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 22,
+      "createdAt": "2022-02-06T12:33:30.927Z",
+      "updatedAt": "2022-02-06T12:33:30.928Z",
+      "title": "Check size of all Node Modules",
+      "content": "Find all of the Node module directories, check how big each one is and the total amount of space it takes up (it can be a surprising amount of space)\n\n```bash\nfind . -name \"node_modules\" -type d -prune -print | xargs du -chs\n```",
+      "SnippetCollection": {
+        "id": 5,
+        "createdAt": "2022-02-06T12:33:00.468Z",
+        "updatedAt": "2022-02-06T12:33:00.469Z",
+        "name": "Node",
+        "description": ""
+      }
+    },
+    {
+      "id": 23,
+      "createdAt": "2022-02-06T12:33:56.271Z",
+      "updatedAt": "2022-02-06T12:33:56.272Z",
+      "title": "Delete all Node Modules",
+      "content": "Delete all of your node modules from your mac and sit there, shocked at the number of modules you've just erased.\n\n```bash\nfind . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\\\;\n```",
+      "SnippetCollection": {
+        "id": 5,
+        "createdAt": "2022-02-06T12:33:00.468Z",
+        "updatedAt": "2022-02-06T12:33:00.469Z",
+        "name": "Node",
+        "description": ""
+      }
+    },
+    {
+      "id": 24,
+      "createdAt": "2022-02-06T12:35:23.628Z",
+      "updatedAt": "2022-02-10T22:27:11.197Z",
+      "title": "Yalc",
+      "content": "Yalc is a great little tool similar to the likes of yarn link and npm link. What it allows us to do is use our local component packages as dependencies of other projects. I prefer Yalc because it physically changes your package.json so you are always aware of which component package you're using and where from.\n\nInstall Yalc globally:\n```bash\n# install globally\nnpm i -g yalc\n\n# publish package locally\nyalc publish\n\n# publish and update all projects using that yalc store\nyalc publish --push\n\n# add your local package as a dependency\nyalc add my-package\n# (This will change/add the package location in your package.json)\n\n# remove it from / revert your package.json\nyalc remove my-package\n```",
+      "SnippetCollection": {
+        "id": 6,
+        "createdAt": "2022-02-06T12:34:41.154Z",
+        "updatedAt": "2022-02-06T12:34:41.155Z",
+        "name": "NPM",
+        "description": ""
+      }
+    },
+    {
+      "id": 25,
+      "createdAt": "2022-02-06T12:37:07.374Z",
+      "updatedAt": "2022-02-06T12:37:25.239Z",
+      "title": "Install the latest version of node",
+      "content": "Your Node install looking a little outdated? easily install the latest stable version of node.\n\n```bash\nnvm install node\n```",
+      "SnippetCollection": {
+        "id": 7,
+        "createdAt": "2022-02-06T12:36:10.023Z",
+        "updatedAt": "2022-02-06T12:36:34.588Z",
+        "name": "NVM",
+        "description": "NVM (Node Version Manager) is a tool which helps you easily manage your Node versions. Without NVM managing node versions locally is a real pain, install this once and breathe a sigh of relief."
+      }
+    },
+    {
+      "id": 26,
+      "createdAt": "2022-02-06T12:37:51.775Z",
+      "updatedAt": "2022-02-06T12:37:51.776Z",
+      "title": "List versions of node installed",
+      "content": "Check what versions of Node you have installed, if you have a new one installed you can switch it there and then\n\n```bash\nnvm list\n```",
+      "SnippetCollection": {
+        "id": 7,
+        "createdAt": "2022-02-06T12:36:10.023Z",
+        "updatedAt": "2022-02-06T12:36:34.588Z",
+        "name": "NVM",
+        "description": "NVM (Node Version Manager) is a tool which helps you easily manage your Node versions. Without NVM managing node versions locally is a real pain, install this once and breathe a sigh of relief."
+      }
+    },
+    {
+      "id": 27,
+      "createdAt": "2022-02-06T12:38:26.979Z",
+      "updatedAt": "2022-02-06T12:38:26.980Z",
+      "title": "Specify a node version to use",
+      "content": "If you need to use a specific version of Node for a project declare it in the command.\n\n```bash\nnvm install 6.14.4 # or 10.10.0, 8.9.1, etc\n```",
+      "SnippetCollection": {
+        "id": 7,
+        "createdAt": "2022-02-06T12:36:10.023Z",
+        "updatedAt": "2022-02-06T12:36:34.588Z",
+        "name": "NVM",
+        "description": "NVM (Node Version Manager) is a tool which helps you easily manage your Node versions. Without NVM managing node versions locally is a real pain, install this once and breathe a sigh of relief."
+      }
+    },
+    {
+      "id": 28,
+      "createdAt": "2022-02-06T12:38:50.861Z",
+      "updatedAt": "2022-02-06T12:38:50.861Z",
+      "title": "Use current node version in all terminals",
+      "content": "Are new terminal sessions using different versions of Node? Set your default version which will be used across everything.\n\n```bash\nnvm alias default node\n```",
+      "SnippetCollection": {
+        "id": 7,
+        "createdAt": "2022-02-06T12:36:10.023Z",
+        "updatedAt": "2022-02-06T12:36:34.588Z",
+        "name": "NVM",
+        "description": "NVM (Node Version Manager) is a tool which helps you easily manage your Node versions. Without NVM managing node versions locally is a real pain, install this once and breathe a sigh of relief."
+      }
+    },
+    {
+      "id": 29,
+      "createdAt": "2022-02-06T15:23:07.107Z",
+      "updatedAt": "2022-02-06T15:23:07.107Z",
+      "title": "Import SVG inline",
+      "content": "A nice easy way to grab icons anywhere in your site.\n\n```php\n<?php include(\"icons/my-icon.svg\"); ?>\n\n// getting an icon from a parent directory\n<?php include __DIR__ . '/../icons/facebook.svg'; ?>\n```",
+      "SnippetCollection": {
+        "id": 8,
+        "createdAt": "2022-02-06T15:22:42.944Z",
+        "updatedAt": "2022-02-06T15:22:42.945Z",
+        "name": "PHP",
+        "description": ""
+      }
+    },
+    {
+      "id": 30,
+      "createdAt": "2022-02-06T15:24:05.763Z",
+      "updatedAt": "2022-02-06T15:24:05.763Z",
+      "title": "Enqueue a script",
+      "content": "A method to functionally add scripts to your WordPress projects footer.\n\n```php\nwp_enqueue_script(\n    'lazysizes',\n    get_template_directory_uri() . '/js/lazysizes.min.js'\n);\n```",
+      "SnippetCollection": {
+        "id": 8,
+        "createdAt": "2022-02-06T15:22:42.944Z",
+        "updatedAt": "2022-02-06T15:22:42.945Z",
+        "name": "PHP",
+        "description": ""
+      }
+    },
+    {
+      "id": 31,
+      "createdAt": "2022-02-06T15:24:27.776Z",
+      "updatedAt": "2022-02-06T15:24:27.776Z",
+      "title": "Get template part",
+      "content": "Reuse some templated PHP content you have created\n\n```php\n<?php get_template_part('template_parts/griditem'); ?>\n```",
+      "SnippetCollection": {
+        "id": 8,
+        "createdAt": "2022-02-06T15:22:42.944Z",
+        "updatedAt": "2022-02-06T15:22:42.945Z",
+        "name": "PHP",
+        "description": ""
+      }
+    },
+    {
+      "id": 32,
+      "createdAt": "2022-02-06T15:24:55.570Z",
+      "updatedAt": "2022-02-06T15:24:55.571Z",
+      "title": "Use variables in template parts",
+      "content": "Sometimes you need to pass variables down into a template part, a similar thinking pattern to react and props.\n\n```php\n// you can use any value including objects.\nset_query_var( 'var_name_to_be_used_later', 'Value to be retrieved later' );\n\n// in the template part\n$passedVariable = get_query_var('var_name_to_be_used_later');\n```",
+      "SnippetCollection": {
+        "id": 8,
+        "createdAt": "2022-02-06T15:22:42.944Z",
+        "updatedAt": "2022-02-06T15:22:42.945Z",
+        "name": "PHP",
+        "description": ""
+      }
+    },
+    {
+      "id": 33,
+      "createdAt": "2022-02-06T15:25:17.924Z",
+      "updatedAt": "2022-02-06T15:25:17.925Z",
+      "title": "List all blocks on the page",
+      "content": "If you have ever done any Gutenberg block development for WordPress this is an essential snippet.\n\n```php\n// lets grab all of the blocks from the post content\n$blocks = parse_blocks($post->post_content);\n// and lets print it out\nvar_dump($blocks);\n```",
+      "SnippetCollection": {
+        "id": 8,
+        "createdAt": "2022-02-06T15:22:42.944Z",
+        "updatedAt": "2022-02-06T15:22:42.945Z",
+        "name": "PHP",
+        "description": ""
+      }
+    },
+    {
+      "id": 34,
+      "createdAt": "2022-02-06T17:14:39.668Z",
+      "updatedAt": "2022-02-06T17:14:39.669Z",
+      "title": "useMediaQuery Custom Hook",
+      "content": "Conditionally render components based on the browser size rather than rendering and hiding the components with CSS. Taken from [@cassidoo's](https://twitter.com/cassidoo) post [Building a custom React media query hook for more responsive apps](https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/?utm_source=twitter&utm_medium=usemedia-cs&utm_campaign=devex)\n\n```jsx\nimport { useState, useEffect } from 'react';\n\nexport function useMediaQuery(query) {\n  const [matches, setMatches] = useState(false);\n\n  useEffect(() => {\n    const media = window.matchMedia(query);\n    if (media.matches !== matches) {\n      setMatches(media.matches);\n    }\n    const listener = () => {\n      setMatches(media.matches);\n    };\n    media.addListener(listener);\n    return () => media.removeListener(listener);\n  }, [matches, query]);\n\n  return matches;\n}\n\n// how to use it\nfunction Page() {\n  let isPageWide = useMediaQuery('(min-width: 800px)');\n\n  return (\n    <>\n      {isPageWide && <UnnecessarySidebar />}\n      <ImportantContent />\n    </>\n  );\n}\n```",
+      "SnippetCollection": {
+        "id": 9,
+        "createdAt": "2022-02-06T17:14:23.518Z",
+        "updatedAt": "2022-02-06T17:14:23.519Z",
+        "name": "React",
+        "description": ""
+      }
+    },
+    {
+      "id": 35,
+      "createdAt": "2022-02-06T17:15:14.872Z",
+      "updatedAt": "2022-02-15T19:51:52.644Z",
+      "title": "Pass props to props children",
+      "content": "A very basic example of how we can pass props down to props.children. If you're wanting to abstract away some logic, make your code more readable or make it easy to switch out components, this is a great solution.\n\n```jsx\n// inside our component we add the props we want as arguments for props.children\nconst Blocks = ({ allBlocks, children }) =>\n  allBlocks.map((block, index) => <div>{children(block, index)}</div>);\n\n// then we can access those arguments via a function\n<Blocks allBlocks={state.allBlocks}>\n  {(block, index) => {\n    return <DynamicBlock block={block} index={index} />;\n  }}\n</Blocks>;\n```",
+      "SnippetCollection": {
+        "id": 9,
+        "createdAt": "2022-02-06T17:14:23.518Z",
+        "updatedAt": "2022-02-06T17:14:23.519Z",
+        "name": "React",
+        "description": ""
+      }
+    },
+    {
+      "id": 36,
+      "createdAt": "2022-02-06T17:17:27.793Z",
+      "updatedAt": "2022-02-06T17:17:27.793Z",
+      "title": "Tree command",
+      "content": "Very common to find in GitHub README's the tree command makes it super easy to get directory structures in an easy to read format.\n\n```bash\n# Get the tree of the first directory level\ntree -v -L 1\n\n# Ignore node_modules and grab the tree two directory levels down\ntree -I 'node_modules' -v -L 2\n```",
+      "SnippetCollection": {
+        "id": 10,
+        "createdAt": "2022-02-06T17:16:38.364Z",
+        "updatedAt": "2022-02-06T17:16:38.365Z",
+        "name": "Terminal",
+        "description": ""
+      }
+    },
+    {
+      "id": 37,
+      "createdAt": "2022-02-06T17:22:05.971Z",
+      "updatedAt": "2022-02-06T17:22:05.971Z",
+      "title": "Setting up Virtual Hosts",
+      "content": "Go to `MAMP > Preferences > Ports` and set Apache Port to be `80`\n\nOpen the hosts file in VS Code:\n```bash\ncd /etc\ncode hosts\n```\nAdd the urls you want to use:\n```\n127.0.0.1 your-site.test\n```\n\n(you may need to sudo save, VS Code makes this easy for you)\n\nAdd the virtual hosts to the end of `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`:\n\n```\n<VirtualHost *:80>\n  DocumentRoot \"/Applications/MAMP/htdocs\" ServerName localhost\n</VirtualHost>\n\n<VirtualHost *:80>\n  ServerName your-site.test DocumentRoot \"/Users/username/Sites/directory\"\n</VirtualHost>\n```\n\n(notice how we are re-setting up the main localhost first)\nAnd make sure the NameVirtualHost is set to:\n\n```\nNameVirtualHost *:80\n```\n\nThen in `/Applications/MAMP/conf/apache/httpd.conf`\nUncomment this line:\n\n```\n# Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf\n```\n\nFind this line:\n```\n<Directory />\n    Options Indexes FollowSymLinks\n    AllowOverride None\n</Directory>\n```\n\nand change it from `None` to `All`:\nLastly find these two instances:\n\n```\nListen 8888\nServerName localhost:8888\n```\nand change them to:\n```\nListen 80\nServerName localhost:80\n```\n\nand then it should work!\n\nIf you find your site feels a little sluggish compared to using localhost you can speed up the lookup time by adding it as an alias. So in `/etc/hosts`:\n\n```\n127.0.0.1 localhost your-site.test\n```",
+      "SnippetCollection": {
+        "id": 11,
+        "createdAt": "2022-02-06T17:20:55.245Z",
+        "updatedAt": "2022-02-06T17:20:55.246Z",
+        "name": "WordPress",
+        "description": ""
+      }
+    },
+    {
+      "id": 38,
+      "createdAt": "2022-02-06T17:22:39.773Z",
+      "updatedAt": "2022-02-06T17:22:39.773Z",
+      "title": "Altering Site Address and WordPress Address",
+      "content": "When switching to virtual hosts from a localhost setup the site address and wordpress address general settings were causing some issues. You may find you can't access the admin, because its setup for a different url, so here's how to fix that.\n\nOpen your projects `wp-config.php` file and after the “define” statements (just before the comment line that says “That’s all, stop editing!”), insert a new line:\n\n```\ndefine('RELOCATE',true)\n```\n\nNow if your site is at `http://www.yourdomainname.com` your need to go to `http://www.yourdomainname.com/wp-login.php` (notice how we are manually accessing the wp-login.php file)\n\nLogin in as normal and make the changes in `General > Settings`\n\nMake sure to remove `define('RELOCATE',true)` after successfully changing the urls.",
+      "SnippetCollection": {
+        "id": 11,
+        "createdAt": "2022-02-06T17:20:55.245Z",
+        "updatedAt": "2022-02-06T17:20:55.246Z",
+        "name": "WordPress",
+        "description": ""
+      }
+    },
+    {
+      "id": 39,
+      "createdAt": "2022-02-08T10:05:54.427Z",
+      "updatedAt": "2022-02-08T10:06:21.753Z",
+      "title": "Autosize Textarea",
+      "content": "Create a Textarea that auto resizes as you add more content. It makes for a much nicer experience. \n\n```js\nexport const TextArea = ({\n  label,\n  name,\n  defaultValue,\n  rows = 5,\n}: TextAreaProps) => {\n  const textarea = useRef<HTMLTextAreaElement>(null)\n  const [characterCount, setCharacterCount] = useState(\n    defaultValue?.length || 0,\n  )\n\n  // if we change the line height in css make sure to change this\n  let lineHeight = 1.75\n  let initialLimit = rows * (lineHeight * 16)\n  const handleChange = (e: React.ChangeEvent<any>) => {\n    let scrollLeft =\n      window.pageXOffset ||\n      (document.documentElement || document.body.parentNode || document.body)\n        .scrollLeft\n    let scrollTop =\n      window.pageYOffset ||\n      (document.documentElement || document.body.parentNode || document.body)\n        .scrollTop\n    e.target.style.height = 'auto'\n    e.target.style.height = `${Math.max(e.target.scrollHeight, initialLimit)}px`\n    window.scrollTo(scrollLeft, scrollTop)\n  }\n\n  useEffect(() => {\n    if (textarea.current) {\n      textarea.current.style.height = 'inherit'\n      textarea.current.style.height = `${Math.max(\n        textarea.current.scrollHeight,\n        initialLimit,\n      )}px`\n    }\n  }, [])\n\n  return (\n    <div className=\"flex flex-col gap-2 w-full relative\">\n      <label htmlFor={name}>{label}</label>\n      <textarea\n        ref={textarea}\n        className=\"border-slate-300 border w-full p-3 text-black leading-7 rounded text-base resize-none overflow-hidden disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed\"\n        name={name}\n        id={name}\n        rows={rows}\n        defaultValue={defaultValue}\n        spellCheck={true}\n        onChange={(e) => {\n          handleChange(e)\n        }}\n      ></textarea>\n    </div>\n  )\n}\n```",
+      "SnippetCollection": {
+        "id": 9,
+        "createdAt": "2022-02-06T17:14:23.518Z",
+        "updatedAt": "2022-02-06T17:14:23.519Z",
+        "name": "React",
+        "description": ""
+      }
+    },
+    {
+      "id": 42,
+      "createdAt": "2022-03-08T15:11:06.201Z",
+      "updatedAt": "2022-03-08T18:59:56.094Z",
+      "title": "Dedupe an Array",
+      "content": "Need to easily remove duplicate values from an array? Use this performant one liner:\n\n```js\nconst dedupedArray = [...new Set(myArray)]\n```\n",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 43,
+      "createdAt": "2022-03-10T17:52:31.022Z",
+      "updatedAt": "2022-03-10T18:04:42.095Z",
+      "title": "Kill a port that's being used",
+      "content": "For that annoying error when your dev script is trying to use a port thats already in use\n\n```bash\nnpx kill-port 3000\n```",
+      "SnippetCollection": {
+        "id": 5,
+        "createdAt": "2022-02-06T12:33:00.468Z",
+        "updatedAt": "2022-02-06T12:33:00.469Z",
+        "name": "Node",
+        "description": ""
+      }
+    },
+    {
+      "id": 44,
+      "createdAt": "2022-03-18T18:17:46.176Z",
+      "updatedAt": "2022-03-18T18:17:46.177Z",
+      "title": "Update NPM Packages Interactively",
+      "content": "Need to update a few packages quickly without typing them all out? Use the script below to quickly select the packages you want and update them all at once.\n\n```bash\nnpx npm-check -u\n```",
+      "SnippetCollection": {
+        "id": 6,
+        "createdAt": "2022-02-06T12:34:41.154Z",
+        "updatedAt": "2022-02-06T12:34:41.155Z",
+        "name": "NPM",
+        "description": ""
+      }
+    },
+    {
+      "id": 45,
+      "createdAt": "2022-03-23T22:44:52.243Z",
+      "updatedAt": "2022-03-23T22:46:04.076Z",
+      "title": "Check if an Object is empty",
+      "content": "Sometimes you need to know whether an `Object` is empty or not. This lil` snippet will sort you right out, and it's pretty simple too!\n\n```js\nfunction isEmpty(object) {\n  for (const property in object) {\n    return false;\n  }\n  return true;\n}\n```",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    },
+    {
+      "id": 46,
+      "createdAt": "2022-04-04T12:01:56.639Z",
+      "updatedAt": "2022-04-04T12:03:33.903Z",
+      "title": "Format with Prettier CLI",
+      "content": "Sometimes you haven't got Prettier set up for your project yet (for whatever reason) and you want to format a bunch of files before you commit:\n\nexecute it from your terminal:\n\n```bash\nnpx prettier --write path-to/your-files \n```\n\nor add it into your package.json\n\n```json\n\"scripts\": {\n    \"format\": \"npx prettier --write app\"\n}\n```",
+      "SnippetCollection": {
+        "id": 6,
+        "createdAt": "2022-02-06T12:34:41.154Z",
+        "updatedAt": "2022-02-06T12:34:41.155Z",
+        "name": "NPM",
+        "description": ""
+      }
+    },
+    {
+      "id": 47,
+      "createdAt": "2022-04-29T21:26:07.488Z",
+      "updatedAt": "2022-04-29T21:26:34.537Z",
+      "title": "Splitting Text",
+      "content": "Sometimes it's easier to use a library. In this case we can use the [splt](https://www.spltjs.com/) library.\n\n```js\nimport splt from \"https://cdn.skypack.dev/spltjs@1.0.8\";\n// any element with a class of 'splt' will be targeted by the script\nsplt({});\n```\nSplt also provide a useful [example](https://codepen.io/pen/?template=XWpmvZM)",
+      "SnippetCollection": {
+        "id": 4,
+        "createdAt": "2022-01-27T22:34:32.706Z",
+        "updatedAt": "2022-01-27T22:34:32.706Z",
+        "name": "Javascript",
+        "description": ""
+      }
+    }
+  ]
+}

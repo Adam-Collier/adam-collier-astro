@@ -51,6 +51,9 @@ export default {
       letterboxd:
         '0px 0px 2.2px var(--un-shadow-color),0px 0px 5.3px var(--un-shadow-color),0px 0px 10px var(--un-shadow-color),0px 0px 17.9px var(--un-shadow-color),0px 0px 33.4px var(--un-shadow-color),0px 0px 80px var(--un-shadow-color)',
     },
+    boxShadowColor: {
+      orange: '#FF8000',
+    },
     transitionProperty: {
       bounce:
         'transform 0.4s cubic-bezier(.26,.5,0,1.14), opacity 0.4s cubic-bezier(.26,.5,0,1.14)',
