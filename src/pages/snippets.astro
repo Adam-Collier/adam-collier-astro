@@ -5,15 +5,18 @@ import { Image } from '@astrojs/image/components'
 import '../styles/refractor.css'
 import { toReadableDate } from 'src/utils'
 import Snippets from '@components/Snippets.svelte'
+import json from '../api/snippets.json'
 
-const response = await fetch(import.meta.env.STATIC_API + '/snippets.json')
-const json = await response.json()
+// const response = await fetch(import.meta.env.STATIC_API + '/snippets.json')
+// const json = await response.json()
+
+console.log(json)
 
 const jsonData = json.data
 
 const snippets = await Promise.all(
   jsonData.map(async (data: any) => {
-    const [, ...markdownCode] = data.content.split(/(```)/)
+    const [, ...markdownCode] = data.description.split(/(```)/)
     const code = await toHTML(markdownCode.join(''), {
       highlightOptions: { noPre: true },
     })

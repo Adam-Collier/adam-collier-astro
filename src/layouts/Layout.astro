@@ -1,7 +1,5 @@
 ---
 import '@unocss/reset/tailwind.css'
-import Header from '@components/Header.astro'
-import { Image } from '@astrojs/image/components'
 import NavLink from '@components/NavLink.astro'
 import Input from '@components/Input.svelte'
 export interface Props {
@@ -13,7 +11,7 @@ const { title, layoutCSS = 'bg-white/50 text-white' } = Astro.props
 
 const nav = {
   Home: '/',
-  Posts: '/posts',
+  Posts: '/blog',
   Snippets: '/snippets',
   Resources: '/resources',
   Music: '/music',
