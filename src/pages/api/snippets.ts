@@ -27,7 +27,7 @@ export async function get({ params, request }) {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'max-age=1, stale-while-revalidate=59',
+      'Cache-Control': 's-maxage=1, stale-while-revalidate=59',
     },
   })
 }
