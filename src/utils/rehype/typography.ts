@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit'
 
 export const typography = () => {
   // All remark and rehype plugins return a separate function
-  return function (tree: any) {
+  return (tree: any) => {
     visit(tree, (node, index, parentNode) => {
       if (node.tagName === 'h2') {
         node.properties.className = 'text-2xl font-medium tracking-[-0.019em]'
@@ -14,7 +14,7 @@ export const typography = () => {
         node.properties.className = 'text-md font-medium '
       }
       if (node.tagName === 'p') {
-        node.properties.className = 'text-md leading-7 tracking-[-0.011em]'
+        node.properties.className = 'text-md tracking-[-0.011em]'
       }
       if (node.tagName === 'ol') {
         node.properties.className = 'list-decimal pl-8 space-y-2'

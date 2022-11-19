@@ -1,0 +1,74 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { toHTML } from 'src/utils/toHtml'
+import { Image } from '@astrojs/image/components'
+import '../styles/refractor.css'
+import { toReadableDate } from 'src/utils'
+import Snippets from '@components/Snippets.svelte'
+
+const response = await fetch(import.meta.env.STATIC_API + '/snippets.json')
+const json = await response.json()
+
+const jsonData = json.data
+
+const snippets = await Promise.all(
+  jsonData.map(async (data: any) => {
+    const [, ...markdownCode] = data.content.split(/(```)/)
+    const code = await toHTML(markdownCode.join(''), {
+      highlightOptions: { noPre: true },
+    })
+
+    delete data.SnippetCollection
+    delete data.content
+
+    return {
+      ...data,
+      updatedAt: toReadableDate(data.updatedAt),
+      code,
+    }
+  }),
+)
+---
+
+<Layout title="Snippets" layoutCSS="bg-black/25 text-white/80">
+  <Image
+    src="/backgrounds/moonrise-preview.png"
+    format="avif"
+    alt="background"
+    width="1440"
+    height="720"
+    class="fixed left-0 top-0 h-full w-full -z-1"
+  />
+  <div
+    class="relative w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2"
+  >
+    <Snippets snippets={snippets} client:load />
+  </div>
+</Layout>
+
+<script>
+  const copyToClipboard = (content: string) => {
+    if (typeof window !== 'undefined') {
+      const el = document.createElement(`textarea`)
+      el.value = content
+      el.setAttribute(`readonly`, ``)
+      el.style.position = `absolute`
+      el.style.left = `-9999px`
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand(`copy`)
+      document.body.removeChild(el)
+    }
+  }
+
+  window.copyCodeToClipboard = async (el: HTMLButtonElement) => {
+    el.children[0].classList.remove('i-ri:clipboard-line')
+    el.children[0].classList.add('i-ri:check-line')
+    if (el.dataset.code) {
+      copyToClipboard(el.dataset.code!)
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    el.children[0].classList.remove('i-ri:check-line')
+    el.children[0].classList.add('i-ri:clipboard-line')
+  }
+</script>

@@ -26,14 +26,17 @@
 pre {
     box-sizing: border-box;
     font-family: 'Fira Mono, monospace';
-    background: var(--background);
     overflow: auto;
     font-size: 0.875rem;
     line-height: 1.5;
     white-space: pre;
     border-radius: 0.25rem;
-    padding: 2rem;
     color: #fff;
+}
+
+.pre {
+    background: var(--background);
+    padding: 2rem;
 }
 
 pre>code {

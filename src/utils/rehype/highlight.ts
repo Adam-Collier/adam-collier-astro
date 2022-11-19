@@ -6,14 +6,19 @@ import jsx from 'refractor/lang/jsx'
 
 refractor.register(jsx)
 
-export const highlight = () => {
+export const highlight = (highlightOptions: any) => {
+  const options = {
+    noPre: false,
+    ...highlightOptions,
+  }
+
   return (tree: any) => {
     visit(tree, 'element', visitor)
   }
 
   function visitor(node: any, index: any, parentNode: any) {
     if (node.tagName === 'pre') {
-      node.properties.className = 'pre my-8'
+      // node.properties.className = 'pre my-8'
       let code = toString(node.children[0])
 
       const wrapperNode = {
@@ -47,7 +52,11 @@ export const highlight = () => {
         ],
       }
 
-      parentNode.children[index] = wrapperNode
+      if (options.noPre) {
+        parentNode.children[index] = node
+      } else {
+        parentNode.children[index] = wrapperNode
+      }
     }
 
     if (parentNode.tagName === 'pre' && node.tagName === 'code') {

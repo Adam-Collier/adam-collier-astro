@@ -1,10 +1,13 @@
 ---
 // import { Image } from '@astrojs/image/components'
 import { getImage } from '@astrojs/image'
+import { Image } from '@astrojs/image/components'
 import Input from '@components/Input.svelte'
 import Resources from '@components/Resources.svelte'
 import Layout from '@layouts/Layout.astro'
-// import Layout from '@layouts/Layout.astro'
+import NavLink from '@components/NavLink.astro'
+import { toHTML } from 'src/utils/toHtml'
+import { text } from 'svelte/internal'
 // import json from '../api/resources.json'
 
 const response = await fetch(import.meta.env.STATIC_API + '/resources.json')
@@ -23,6 +26,8 @@ type ResourceProps = {
 
 const resources = await Promise.all(
   jsonData.map(async (data: ResourceProps) => {
+    const content = await toHTML(data.content.split(' - ')[2])
+
     return {
       ...data,
       image: data.image
@@ -33,27 +38,20 @@ const resources = await Promise.all(
             format: 'avif',
           })
         : data.image,
+      content,
     }
   }),
 )
 ---
 
-<Layout title="Resources">
-  <main class="p-4 sm:p-6">
-    <div
-      class="bg-gray-50 rounded-lg overflow-hidden shadow-[inset_0_0_0_1px_rgb(255,255,255),0_0_10px_rgba(0,0,0,0.15)]"
-    >
-      <div
-        class="flex items-center rounded-lg overflow-hidden p-4 sm:p-6 gap-4 sm:gap-6"
-      >
-        <h1 class="text-lg sm:text-xl">Resources</h1>
-        <div class="w-[1px] h-[40px] bg-gray-200"></div>
-        <Input placeholder="Search" client:load />
-      </div>
-      <hr class="w-[99%] block mx-auto" />
-      <div class="p-2 sm:p-4">
-        <Resources resources={resources} client:load />
-      </div>
-    </div>
-  </main>
+<Layout title="Resources" layoutCSS="bg-white/30 text-black/70">
+  <Image
+    src="/backgrounds/autumnal-peach-preview.png"
+    format="avif"
+    alt="background"
+    width="1440"
+    height="720"
+    class="fixed left-0 top-0 h-full w-full -z-1"
+  />
+  <Resources resources={resources} client:load />
 </Layout>

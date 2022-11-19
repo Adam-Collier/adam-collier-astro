@@ -1,11 +1,23 @@
 ---
 import '@unocss/reset/tailwind.css'
 import Header from '@components/Header.astro'
+import { Image } from '@astrojs/image/components'
+import NavLink from '@components/NavLink.astro'
+import Input from '@components/Input.svelte'
 export interface Props {
   title: string
+  layoutCSS?: string
 }
 
-const { title } = Astro.props
+const { title, layoutCSS = 'bg-white/50 text-white' } = Astro.props
+
+const nav = {
+  Home: '/',
+  Posts: '/posts',
+  Snippets: '/snippets',
+  Resources: '/resources',
+  Music: '/music',
+}
 ---
 
 <!DOCTYPE html>
@@ -18,7 +30,36 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <Header />
-    <slot />
+    <main class="p-4 min-h-screen">
+      <div
+        class={[
+          'rounded-lg overflow-hidden shadow-[inset_0_0_0_1px_rgb(255,255,255,0.15),0_0_10px_rgba(0,0,0,0.15)]',
+          layoutCSS,
+        ].join(' ')}
+      >
+        <div
+          class="flex w-full items-center justify-between rounded-lg overflow-hidden p-4 gap-4 sm:gap-6"
+        >
+          <nav>
+            <ul class="flex gap-2">
+              {
+                Object.entries(nav).map(([text, href]) => {
+                  return (
+                    <NavLink href={href} label={text}>
+                      {text}
+                    </NavLink>
+                  )
+                })
+              }
+            </ul>
+          </nav>
+          <Input placeholder="Search" client:load />
+        </div>
+        <div class="w-full h-px bg-white/20"></div>
+        <div class="p-2 sm:p-4 min-h-screen">
+          <slot />
+        </div>
+      </div>
+    </main>
   </body>
 </html>

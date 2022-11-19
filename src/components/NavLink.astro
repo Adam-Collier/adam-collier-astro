@@ -1,0 +1,9 @@
+---
+const { href, label } = Astro.props
+---
+
+<li
+  class="text-sm text-current font-normal bg-white/20 hover:bg-white/30 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)] px-2.5 py-1.5 rounded-md"
+>
+  <a rel="prefetch" href={href} aria-label={label}><slot /></a>
+</li>
