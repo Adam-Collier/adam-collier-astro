@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import { Image } from '@astrojs/image/components'
+// import { Image } from '@astrojs/image/components'
 import '../styles/refractor.css'
 import Snippets from '@components/Snippets.svelte'
 // import json from '../api/snippets.json'
@@ -24,14 +24,14 @@ const snippets = json.slice(0, 8)
 ---
 
 <Layout title="Snippets" layoutCSS="bg-black/25 text-white/80">
-  <Image
+  <!-- <Image
     src="/backgrounds/moonrise-preview.png"
     format="avif"
     alt="background"
     width="1440"
     height="720"
     class="fixed left-0 top-0 h-full w-full -z-1"
-  />
+  /> -->
   <div
     class="relative w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2"
   >
