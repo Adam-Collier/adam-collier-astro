@@ -1,14 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import { toHTML } from 'src/utils/toHtml'
 import { Image } from '@astrojs/image/components'
 import '../styles/refractor.css'
-import { toReadableDate } from 'src/utils'
 import Snippets from '@components/Snippets.svelte'
 // import json from '../api/snippets.json'
 
 // const response = await fetch(import.meta.env.STATIC_API + '/snippets.json')
-const response = await fetch(import.meta.env.VERCEL_URL + '/api/snippets')
+const response = await fetch(
+  'https://' + import.meta.env.VERCEL_URL + '/api/snippets',
+)
 const snippets = await response.json()
 ---
 
