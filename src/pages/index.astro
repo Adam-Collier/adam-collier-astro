@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { Image } from '@astrojs/image/components'
+import { getImage } from '@astrojs/image'
 import Letterboxd from '@components/Letterboxd.svelte'
 
 const getBooks = async () => {
@@ -12,7 +13,24 @@ const getBooks = async () => {
 const getFilms = async () => {
   const response = await fetch(`${import.meta.env.STATIC_API}/letterboxd.json`)
   const json = await response.json()
-  return json
+
+  const withOptimisedImage = await Promise.all(
+    json.map(async (film) => {
+      const { src } = await getImage({
+        src: film.src,
+        width: 400,
+        aspectRatio: 2 / 3,
+        format: 'avif',
+      })
+
+      return {
+        ...film,
+        src,
+      }
+    }),
+  )
+
+  return withOptimisedImage
 }
 
 const getTopTracks = async () => {
@@ -30,7 +48,7 @@ const [books, latestFilms, topTracks] = await Promise.all([
 const { read, reading } = books
 ---
 
-<Layout title="Home" layoutCSS="text-black">
+<Layout title="Home" layoutCSS="text-black" contentCSS="p-0">
   <main class="space-y-20 children:p-4">
     <section class="w-full bg-gradient-to-t from-zinc-100 to-gray-50">
       <div class="space-y-4 rounded-xl max-w-7xl mx-auto py-4 sm:py-16 sm:px-8">

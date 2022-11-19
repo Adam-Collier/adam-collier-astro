@@ -2,12 +2,9 @@
 // import { Image } from '@astrojs/image/components'
 import { getImage } from '@astrojs/image'
 import { Image } from '@astrojs/image/components'
-import Input from '@components/Input.svelte'
 import Resources from '@components/Resources.svelte'
 import Layout from '@layouts/Layout.astro'
-import NavLink from '@components/NavLink.astro'
 import { toHTML } from 'src/utils/toHtml'
-import { text } from 'svelte/internal'
 // import json from '../api/resources.json'
 
 const response = await fetch(import.meta.env.STATIC_API + '/resources.json')

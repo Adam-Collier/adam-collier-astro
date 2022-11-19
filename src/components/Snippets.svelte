@@ -3,7 +3,6 @@
   export let snippets
 
   $: filteredSnippets = snippets.filter((snippet) => {
-    console.log(snippet)
     return snippet.title.toLowerCase().includes($searchValue.toLowerCase())
   })
 </script>

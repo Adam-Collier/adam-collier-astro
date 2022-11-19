@@ -5,9 +5,14 @@ import Input from '@components/Input.svelte'
 export interface Props {
   title: string
   layoutCSS?: string
+  contentCSS?: string
 }
 
-const { title, layoutCSS = 'bg-white/50 text-white' } = Astro.props
+const {
+  title,
+  layoutCSS = 'bg-white/50 text-white',
+  contentCSS = 'p-2 sm:p-4',
+} = Astro.props
 
 const nav = {
   Home: '/',
@@ -54,7 +59,7 @@ const nav = {
           <Input placeholder="Search" client:load />
         </div>
         <div class="w-full h-px bg-white/20"></div>
-        <div class="p-2 sm:p-4 min-h-screen">
+        <div class={['min-h-screen', contentCSS].join(' ')}>
           <slot />
         </div>
       </div>
