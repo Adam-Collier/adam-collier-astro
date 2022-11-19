@@ -8,7 +8,7 @@ import Snippets from '@components/Snippets.svelte'
 // import json from '../api/snippets.json'
 
 // const response = await fetch(import.meta.env.STATIC_API + '/snippets.json')
-const response = await fetch('http://127.0.0.1:3000/api/snippets')
+const response = await fetch(import.meta.env.VERCEL_URL + '/api/snippets')
 const snippets = await response.json()
 ---
 
