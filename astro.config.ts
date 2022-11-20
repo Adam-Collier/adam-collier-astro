@@ -13,7 +13,15 @@ import svelte from '@astrojs/svelte'
 export default defineConfig({
   output: 'server',
   adapter: vercelAdapter(),
-  integrations: [unocss(), preact(), prefetch(), image(), svelte()],
+  integrations: [
+    unocss(),
+    preact(),
+    prefetch(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
+    svelte(),
+  ],
   markdown: {
     syntaxHighlight: false,
     rehypePlugins: [highlight, typography],
